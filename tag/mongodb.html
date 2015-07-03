@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>zorodong</title>
+	<meta name="description" content="">
+	<meta name="author" content="zorodong">
+
+	<!-- HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+		<script src="/theme/html5.js"></script>
+	<![endif]-->
+
+	<!-- Styles -->
+	<link href="/theme/bootstrap.min.css" rel="stylesheet">
+	<link href="/theme/local.css" rel="stylesheet">
+	<link href="/theme/pygments.css" rel="stylesheet">
+
+	<!-- Feeds -->
+
+
+
+
+</head>
+<body>
+	<div class="topbar">
+	  <div class="topbar-inner">
+		<div class="container-fluid">
+		  <a class="brand" href="/">zorodong</a>
+			<ul class="nav">
+					<li ><a href="/category/pages.html">pages</a></li>
+			</ul>
+			<p class="pull-right"><a href="/archives.html">[archives]</a> <a href="/tags.html">[tags]</a></p>
+		</div>
+	  </div>
+	</div>
+
+	<div class="container-fluid">
+	  <div class="sidebar">
+		<div class="well">
+			<h3>Blogroll</h3>
+			<ul>
+				<li><a href="http://getpelican.com/">Pelican</a></li>
+				<li><a href="http://python.org/">Python.org</a></li>
+				<li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+				<li><a href="#">You can modify those links in your config file</a></li>
+			</ul>
+			<div class="social">
+			<h3>Social</h3>
+			<ul>
+				<li><a href="#">You can add links in your config file</a></li>
+				<li><a href="#">Another social link</a></li>
+			</ul>
+			</div>
+		</div>
+	  </div>
+	  <div class="content">
+<div class="page-header"><h1>zorodong <small>mongodb</small></h1></div>
+<div class='article'>
+	<h2>mongodb对新表做预分片处理</h2>
+	<div class="well small">Permalink: <a class="more" href="/mongodbdui-xin-biao-zuo-yu-fen-pian-chu-li.html">2015-07-02 00:00:00+08:00</a>
+by <a class="url fn" href="/author/zorodong.html">zorodong </a>
+ in <a href="/category/pages.html">pages</a>
+tags: <a href="/tag/mongodb.html">mongodb</a> </div>
+	<div class="summary"><h3>这里对mongodb的解决方案是关闭autobalance，对表进行pre_split 和 pre_move，分一下几个步骤：</h3>
+<h4>1. 创建一个新的collection，检查目标db是否sharding开启，没有的话开启在admin下 对db_name 设置enablesharding，这个操作并不会真正对collection做sharding</h4>
+<h4>2. 在admin下对目标collection做开启sharding，用制定的key来做shard</h4>
+<h4>3. 在admin下对目标collection做pre_split，对数据做预先划分</h4>
+<h4>4. 将split之后的chunk迁移到其他shard上 movechunk</h4> <a class="btn primary xsmall" href="/mongodbdui-xin-biao-zuo-yu-fen-pian-chu-li.html">more…</a>
+	</div>
+</div>	
+
+
+		<footer>
+		  <p>Powered by <a href="http://getpelican.com/">Pelican</a>. Theme based on <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>.</p>
+		  <p>&copy; zorodong</p>
+		</footer>
+	  </div>
+
+	</div>
+</body>
+</html>
