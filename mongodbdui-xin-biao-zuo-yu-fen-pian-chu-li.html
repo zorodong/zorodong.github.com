@@ -36,12 +36,11 @@
         </address>
 <p>In <a href="/category/pages.html">pages</a>.</p>
 <p>tags: <a href="/tag/mongodb.html">mongodb</a> </p>
-</footer><!-- /.post-info -->      <p>这里对mongodb的解决方案是关闭autobalance，对表进行pre_split 和 pre_move，分一下几个步骤：
-1.创建一个新的collection，检查目标db是否sharding开启，没有的话开启在admin下 对db_name 设置enablesharding，这个操作并不会真正对collection做sharding</p>
-<p>2.
-在admin下对目标collection做开启sharding，用制定的key来做shard</p>
-<p>3.在admin下对目标collection做pre_split，对数据做预先划分</p>
-<p>4.将split之后的chunk迁移到其他shard上 movechunk</p>
+</footer><!-- /.post-info -->      <h3>这里对mongodb的解决方案是关闭autobalance，对表进行pre_split 和 pre_move，分一下几个步骤：</h3>
+<h4>1. 创建一个新的collection，检查目标db是否sharding开启，没有的话开启在admin下 对db_name 设置enablesharding，这个操作并不会真正对collection做sharding</h4>
+<h4>2. 在admin下对目标collection做开启sharding，用制定的key来做shard</h4>
+<h4>3. 在admin下对目标collection做pre_split，对数据做预先划分</h4>
+<h4>4. 将split之后的chunk迁移到其他shard上 movechunk</h4>
     </div><!-- /.entry-content -->
 
   </article>
