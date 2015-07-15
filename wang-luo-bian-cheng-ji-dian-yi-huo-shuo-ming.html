@@ -56,37 +56,20 @@
 		</div>
 	  </div>
 	  <div class="content">
-<div class="page-header"><h1>zorodong <small>pages</small></h1></div>
-<div class='article'>
-	<h2>mongodb对新表做预分片处理</h2>
-	<div class="well small">Permalink: <a class="more" href="/mongodbdui-xin-biao-zuo-yu-fen-pian-chu-li.html">2015-07-02 00:00:00+08:00</a>
-by <a class="url fn" href="/author/zorodong.html">zorodong </a>
- in <a href="/category/pages.html">pages</a>
-tags: <a href="/tag/mongodb.html">mongodb</a> </div>
-	<div class="summary"><h3>这里对mongodb的解决方案是关闭autobalance，对表进行pre_split 和 pre_move，分一下几个步骤：</h3>
-<h4>1. 创建一个新的collection，检查目标db是否sharding开启，没有的话开启在admin下 对db_name 设置enablesharding，这个操作并不会真正对collection做sharding</h4>
-<h4>2. 在admin下对目标collection做开启sharding，用制定的key来做shard</h4>
-<h4>3. 在admin下对目标collection做pre_split，对数据做预先划分</h4>
-<h4>4. 将split之后的chunk迁移到其他shard上 movechunk</h4> <a class="btn primary xsmall" href="/mongodbdui-xin-biao-zuo-yu-fen-pian-chu-li.html">more…</a>
-	</div>
-</div>	
-<div class='article'>
-	<h2>网络编程几点疑惑说明</h2>
-	<div class="well small">Permalink: <a class="more" href="/wang-luo-bian-cheng-ji-dian-yi-huo-shuo-ming.html">2015-07-02 00:00:00+08:00</a>
+	<div class='article'>
+		<div class="page-header"><h1>网络编程几点疑惑说明</h1></div>
+		<div class="well small">Permalink: <a class="more" href="/wang-luo-bian-cheng-ji-dian-yi-huo-shuo-ming.html">2015-07-02 00:00:00+08:00</a>
 by <a class="url fn" href="/author/zorodong.html">zorodong </a>
  in <a href="/category/pages.html">pages</a>
 tags: <a href="/tag/socket.html">socket</a> </div>
-	<div class="summary"><h3>proactor reactor 比较两者区别在于真正的读取和写入有谁来完成</h3>
+		<div><h3>proactor reactor 比较两者区别在于真正的读取和写入有谁来完成</h3>
 <h4>reactor：应用程序需要自己读取或者写入数据</h4>
 <h4>proactor：应用程序不需要自己进行实际的读写过程，它只需要传递缓存区给操作系统，操作系统会读取或者写入</h4>
 <h3>关于同步异步io的说明，还是参照unix编程中的比较清晰：</h3>
 <h4>同步IO操作 导致请求进程阻塞，直到IO操作完成</h4>
 <h4>异步IO操作 不导致请求进程阻塞</h4>
-<h4>根据上述定义：阻塞IO模型，非阻塞IO模型，IO复用模型和信号驱动IO模型都是同步IO模型，因为其中真正的IO操作都将阻塞进程，只有异步IO模型与POSIX定义的异步IO相匹配</h4> <a class="btn primary xsmall" href="/wang-luo-bian-cheng-ji-dian-yi-huo-shuo-ming.html">more…</a>
+<h4>根据上述定义：阻塞IO模型，非阻塞IO模型，IO复用模型和信号驱动IO模型都是同步IO模型，因为其中真正的IO操作都将阻塞进程，只有异步IO模型与POSIX定义的异步IO相匹配</h4></div>
 	</div>
-</div>	
-
-
 		<footer>
 		  <p>Powered by <a href="http://getpelican.com/">Pelican</a>. Theme based on <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>.</p>
 		  <p>&copy; zorodong</p>
