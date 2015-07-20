@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>zorodong's Blog</title><link href="%3Chttp://zorodong.github.io%3E/" rel="alternate"></link><link href="%3Chttp://zorodong.github.io%3E/feeds/all-zh_cn.atom.xml" rel="self"></link><id>&lt;http://zorodong.github.io&gt;/</id><updated>2015-07-02T00:00:00+08:00</updated><entry><title>github first page。</title><link href="%3Chttp://zorodong.github.io%3E/github-first-page.html" rel="alternate"></link><updated>2015-07-02T00:00:00+08:00</updated><author><name>zorodong</name></author><id>tag:,2015-07-02:&lt;http://zorodong.github.io&gt;/github-first-page.html</id><summary type="html">&lt;p&gt;&lt;strong&gt; Hello World! &lt;/strong&gt;&lt;/p&gt;</summary><category term="linux"></category></entry><entry><title>mongodb对新表做预分片处理</title><link href="%3Chttp://zorodong.github.io%3E/mongodbdui-xin-biao-zuo-yu-fen-pian-chu-li.html" rel="alternate"></link><updated>2015-07-02T00:00:00+08:00</updated><author><name>zorodong</name></author><id>tag:,2015-07-02:&lt;http://zorodong.github.io&gt;/mongodbdui-xin-biao-zuo-yu-fen-pian-chu-li.html</id><summary type="html">&lt;h3&gt;这里对mongodb的解决方案是关闭autobalance，对表进行pre_split 和 pre_move，分一下几个步骤：&lt;/h3&gt;
+&lt;h4&gt;1. 创建一个新的collection，检查目标db是否sharding开启，没有的话开启在admin下 对db_name 设置enablesharding，这个操作并不会真正对collection做sharding&lt;/h4&gt;
+&lt;h4&gt;2. 在admin下对目标collection做开启sharding，用制定的key来做shard&lt;/h4&gt;
+&lt;h4&gt;3. 在admin下对目标collection做pre_split，对数据做预先划分&lt;/h4&gt;
+&lt;h4&gt;4. 将split之后的chunk迁移到其他shard上 movechunk&lt;/h4&gt;</summary><category term="mongodb"></category></entry><entry><title>网络编程几点疑惑说明</title><link href="%3Chttp://zorodong.github.io%3E/wang-luo-bian-cheng-ji-dian-yi-huo-shuo-ming.html" rel="alternate"></link><updated>2015-07-02T00:00:00+08:00</updated><author><name>zorodong</name></author><id>tag:,2015-07-02:&lt;http://zorodong.github.io&gt;/wang-luo-bian-cheng-ji-dian-yi-huo-shuo-ming.html</id><summary type="html">&lt;h3&gt;proactor reactor 比较两者区别在于真正的读取和写入有谁来完成&lt;/h3&gt;
+&lt;h4&gt;reactor：应用程序需要自己读取或者写入数据&lt;/h4&gt;
+&lt;h4&gt;proactor：应用程序不需要自己进行实际的读写过程，它只需要传递缓存区给操作系统，操作系统会读取或者写入&lt;/h4&gt;
+&lt;h3&gt;关于同步异步io的说明，还是参照unix编程中的比较清晰：&lt;/h3&gt;
+&lt;h4&gt;同步IO操作 导致请求进程阻塞，直到IO操作完成&lt;/h4&gt;
+&lt;h4&gt;异步IO操作 不导致请求进程阻塞&lt;/h4&gt;
+&lt;h4&gt;根据上述定义：阻塞IO模型，非阻塞IO模型，IO复用模型和信号驱动IO模型都是同步IO模型，因为其中真正的IO操作都将阻塞进程，只有异步IO模型与POSIX定义的异步IO相匹配&lt;/h4&gt;</summary><category term="socket"></category></entry></feed>
